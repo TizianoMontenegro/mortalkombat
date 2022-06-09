@@ -1,0 +1,240 @@
+:root{
+    --sombra:#ff0;
+}
+*{
+    box-sizing: border-box;
+    color: #fff;
+}
+body{
+    font-family: "Roboto Condensed";
+    background-color: #000;
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+}
+.contenedor{
+    width: 90%;
+	box-shadow: 0px 0px 1.25rem var(--sombra);
+    background: #111;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+    "header      header       header        header"
+    "destacado   destacado    destacado     destacado"
+    "main1       main1        aside1         aside1"
+    "main2       main2        aside2         aside2"
+    "footer      footer       footer        footer";
+    gap: 1.25rem;
+}
+
+/* ------header------ */
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    grid-area: header;
+    box-shadow: 0 0 1.25rem var(--sombra);
+    padding-bottom: 1.25rem;
+    text-transform: uppercase;
+
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    text-transform: uppercase;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.nav a{
+    padding: 0.625rem;
+    transition: .2s all ease;
+	font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+.nav a:hover{
+    color: #000;
+    background-color: #fff;
+}
+.nav a:active{
+    color: #000;
+    background-color: #fff;
+}
+
+
+
+.destacado{
+    grid-area: destacado;
+    display: flex;
+	box-shadow: 0 0 1.25rem var(--sombra);
+}
+.destacado__text{
+    padding: 8px;
+}
+.destacado__img img{
+    width: 100%;
+    min-width: 43.75rem;
+    height: 100%;
+}
+.destacado h1{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.375em;
+}
+.destacado p{
+    font-size: 1.125em;
+}
+
+
+
+.main1{
+    grid-area: main1;
+	box-shadow: 0px 0px 1.25rem var(--sombra);
+}
+.main2{
+    grid-area: main2;
+	box-shadow: 0px 0px 1.25rem var(--sombra);
+}
+.article__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+
+.main__text{
+    padding: 0.5rem;
+}
+.main__text h1{
+    text-transform: uppercase;
+    font-size: 1.375em;
+}
+.main__text p{
+    font-size: 1.125em;
+}
+
+.aside1{
+	box-shadow: 0px 0px 1.25rem var(--sombra);
+    grid-area: aside1;
+}
+.aside2{
+	box-shadow: 0px 0px 1.25rem var(--sombra);
+    grid-area: aside2;
+}
+.aside__text{
+    padding: 0.5rem;
+}
+.aside__text h1{
+    text-transform: uppercase;
+    font-size: 1.375em;
+}
+.aside__text p{
+    font-size: 1.125em;
+}
+.aside1 img{
+    height: 17.8125rem;
+    object-position: top;
+}
+.aside2 img{
+    height: 25rem;
+    object-position: top;
+}
+
+.footer{
+	box-shadow: 0px 0px 1.25rem var(--sombra);
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+}
+.footer p{
+    padding-right: 0.5em;
+}
+
+@media (max-width:1100px){
+    body{
+        font-size: 14px;
+    }
+    .destacado__img img{
+        width: 100%;
+        min-width: 30.75rem;
+        height: 100%;
+    }
+    .aside1 img{
+        height: 14.8125rem;
+        object-position: top;
+    }
+    .aside2 img{
+        height: 21rem;
+        object-position: top;
+    }
+}
+
+@media (max-width:900px){
+    body{
+        font-size: 13px;
+    }
+    .destacado__img img{
+        width: 100%;
+        min-width: 20.75em;
+        height: 100%;
+    }
+}
+
+@media (max-width:700px){
+    .contenedor{
+        grid-template-areas: 
+        "header      header       header        header"
+        "destacado   destacado    destacado     destacado"
+        "main1       main1        main1         main1"
+        "main2       main2        main2         main2"
+        "aside1      aside1       aside1        aside1"
+        "aside2      aside2       aside2        aside2"
+        "footer      footer       footer        footer";
+    }
+    .destacado{
+        flex-direction: column;
+    }
+    .destacado__img img{
+        height: 17.8125rem;
+    }
+    .main1 img{
+        height: 17.8125rem;
+    }
+    .main2 img{
+        height: 17.8125rem;
+    }
+    .aside1 img{
+        height: 17.8125rem;
+    }
+    .aside2 img{
+        height: 17.8125rem;
+    }
+    .destacado__img img{
+        width: 100%;
+        min-width: 18.75em;
+        height: 100%;
+    }
+}
+
+@media (max-width:500px){
+    .nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        text-transform: uppercase;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+}
